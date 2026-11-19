@@ -1,0 +1,23 @@
+:root {
+  --bg-primary: #FFFFFF;      
+  --bg-secondary: #F2F7F5;    
+  --bg-surface: #FFFFFF;      
+  
+  --text-primary: #102A2A;    
+  --accent: #0B7A62;          
+  --accent-green: #12A989;    
+  --accent-bright: #29D5A5; 
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
