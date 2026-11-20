@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Trends - Produtos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel ="stylesheet" href= "style.css">
+    <script src="script.js" defer ></script>
+</head>
+<body>
+    <div class="app">
+        <aside class="sidebar" id="menu-lateral">
+        <img class="sidebar__logo" src="assets/logo-4-fashiontrends.png" 
+        alt="FashionTrends">
+
+        <nav class="sidebar__nav" aria-label="Menu Principal">
+            <ul>   
+                <li>
+                    <a href="#" class="nav__link nav__link--ativo" id="link-produtos"> Produtos</a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div class="sobreposicao" id="sobreposicao"></div>
+
+    <div class="conteudo">
+        <header class="topbar">
+            <button type="button" class="topbar__menu" id="botao-menu"
+            aria-label="Abrir menu" aria-controls="menu-lateral" aria-expanded="false">☰</button>
+
+            <div class="topbar__usuario">
+                <span class="topbar__nome"> Bianca </span>
+                <span class="topbar__cargo"> Analista de catálogo </span>
+            </div>
+
+        </header>
+
+        <main class="principal">
+            <p class="aviso" id="aviso" role="status" hidden></p>
+            <section id="tela-lista" aria-labelledby="titulo-lista">
+               
+
+    <div class="cabecalho-tela">
+        <h1 id="titulo-lista">Produtos</h1>
+        <button type="button" class="botao botao--primario" id="botao-novo">+ Adicionar produto</button>
+    </div>
+
+    <section class="resumo" aria-label="Resumo do estoque">
+        <div class="resumo__item">
+            <span class="resumo__rotulo">Produtos</span>
+            <strong class="resumo__valor" id="resumo-total">0</strong>
+        </div>
+        <div class="resumo__item">
+            <span class="resumo__rotulo">Unidades em estoque</span>
+            <strong class="resumo__valor" id="resumo-unidades">0</strong>
+        </div>
+        <div class="resumo__item resumo__item--alerta">
+            <span class="resumo__rotulo">Esgotados</span>
+            <strong class="resumo__valor" id="resumo-esgotados">0</strong>
+        </div>
+        <div class="resumo__item">
+            <span class="resumo__rotulo">Valor em estoque</span>
+            <strong class="resumo__valor" id="resumo-valor">R$ 0,00</strong>
+        </div>
+    </section>
+
+    <div class="ferramentas">
+        <input type="search" id="busca" class="campo campo--busca" placeholder="Buscar por nome" aria-label="Buscar produtos">
+        <select id="filtro-categoria" class="campo campo--select" aria-label="Filtrar por categoria"></select>
+        <select id="filtro-marca" class="campo campo--select" aria-label="Filtrar por marca"></select>
+        <button type="button" class="botao botao--secundario" id="botao-limpar-filtros">Limpar filtros</button>
+    </div>
+
+    <div class="tabela-wrapper">
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th scope="col">Produto</th>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Cor</th>
+                    <th scope="col">Estoque</th>
+                    <th scope="col">Preço</th>
+                    <th scope="col">Ações</th>
+                </tr>
+            </thead>
+            <tbody id="corpo-tabela"></tbody>
+        </table>
+    </div>
+
+    <p class="tabela-rodape" id="rodape-tabela"></p>
+
+    <nav class="paginacao" id="paginacao" aria-label="Paginação" hidden>
+        <button type="button" class="botao botao--secundario" id="botao-anterior">‹ Anterior</button>
+        <span id="info-pagina"></span>
+        <button type="button" class="botao botao--secundario" id="botao-proxima">Próxima ›</button>
+    </nav>
+
+            </section>
+
+            <section id="tela-formulario" aria-labelledby="titulo-formulario" hidden>
+                
+                <div class="cabecalho-tela">
+                    <h1 id="titulo-formulario">Novo produto</h1>
+                </div>
+
+                <form id="formulario-produto" class="formulario" novalidate>
+                    <div class="campo-grupo">
+                        <label for="campo-nome">Nome do produto *</label>
+                        <input type="text" id="campo-nome" name="nome" class="campo" autocomplete="off" aria-describedby="erro-nome">
+                        <p class="campo-erro" id="erro-nome" aria-live="polite"></p>
+                    </div>
+
+                    <div class="campo-grupo">
+                        <label for="campo-categoria">Categoria *</label>
+                        <select id="campo-categoria" name="categoria" class="campo" aria-describedby="erro-categoria"></select>
+                        <p class="campo-erro" id="erro-categoria" aria-live="polite"></p>
+                    </div>
+
+                    <div class="campo-grupo">
+                        <label for="campo-marca">Marca *</label>
+                        <input type="text" id="campo-marca" name="marca" class="campo" autocomplete="off" aria-describedby="erro-marca">
+                        <p class="campo-erro" id="erro-marca" aria-live="polite"></p>
+                    </div>
+
+                    <div class="campo-grupo">
+                        <label for="campo-cor">Cor</label>
+                        <input type="text" id="campo-cor" name="cor" class="campo" autocomplete="off" aria-describedby="erro-cor">
+                        <p class="campo-erro" id="erro-cor" aria-live="polite"></p>
+                    </div>
+
+                    <div class="campo-grupo">
+                        <label for="campo-estoque">Estoque *</label>
+                        <input type="number" id="campo-estoque" name="estoque" class="campo" min="0" step="1" aria-describedby="dica-estoque erro-estoque">
+                        <p class="campo-dica" id="dica-estoque"></p>
+                        <p class="campo-erro" id="erro-estoque" aria-live="polite"></p>
+                    </div>
+
+                    <div class="campo-grupo">
+                        <label for="campo-preco">Preço (R$) *</label>
+                        <input type="number" id="campo-preco" name="preco" class="campo" min="0" step="0.01" aria-describedby="erro-preco">
+                        <p class="campo-erro" id="erro-preco" aria-live="polite"></p>
+                    </div>
+
+                    <div class="campo-grupo campo-grupo--largo">
+                        <label for="campo-descricao">Descrição</label>
+                        <textarea id="campo-descricao" name="descricao" class="campo" rows="4" aria-describedby="erro-descricao"></textarea>
+                        <p class="campo-erro" id="erro-descricao" aria-live="polite"></p>
+                    </div>
+
+                    <div class="campo-grupo campo-grupo--largo">
+                        <label for="campo-foto">Foto do produto</label>
+                        <input type="file" id="campo-foto" class="campo" accept="image/jpeg,image/png,image/webp" aria-describedby="erro-foto">
+                        <div class="previa" id="previa" hidden>
+                            <img class="previa__imagem" id="previa-imagem" alt="Pré-visualização da foto do produto">
+                            <button type="button" class="acao acao--perigo" id="botao-remover-foto">Remover foto</button>
+                        </div>
+                        <p class="campo-erro" id="erro-foto" aria-live="polite"></p>
+                    </div>
+
+                    <div class="formulario__acoes">
+                        <button type="button" class="botao botao--secundario" id="botao-cancelar">Cancelar</button>
+                        <button type="submit" class="botao botao--primario" id="botao-salvar">Cadastrar produto</button>
+                    </div>
+                </form>
+            </section>
+
+        </main>
+    </div>
+    </div>
+
+</body>
+</html>

@@ -16,7 +16,7 @@ export function Navbar() {
         <a href="#contato">Contato</a>
       </nav>
 
-      <a href="public/curriculo.pdf" download className="btn-cv">
+      <a href={`${import.meta.env.BASE_URL}curriculo.pdf`} download className="btn-cv">
         Download CV ↓
       </a>
     </header>

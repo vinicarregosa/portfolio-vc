@@ -65,17 +65,81 @@
   border-color: var(--accent-bright);
 }
 
+/* ---------- Tablet ---------- */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 0.9rem 2rem;
+  }
+
+  .navbar-pill {
+    gap: 1rem;
+    padding: 0.4rem 1rem;
+  }
+}
+
+/* ---------- Tablet em retrato / celular em paisagem ---------- */
 @media (max-width: 768px) {
   .navbar {
-    padding: 0.9rem 1.5rem;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    grid-template-columns: 1fr auto;
+    gap: 0.65rem;
   }
 
   .navbar-pill {
     grid-column: 1 / -1;
     order: 3;
     width: 100%;
-    justify-content: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+    padding: 0.35rem 0.9rem;
+  }
+
+  .navbar-pill a {
+    flex: 1;
+    text-align: center;
+    padding: 0.5rem 0;
+    white-space: nowrap;
+  }
+
+  .navbar-logo {
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+  }
+
+  .btn-cv {
+    white-space: nowrap;
+  }
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.6rem 1rem;
+  }
+
+  .navbar-logo {
+    font-size: 0.95rem;
+  }
+
+  .navbar-pill {
+    gap: 0.35rem;
+    padding: 0.3rem 0.65rem;
+  }
+
+  .navbar-pill a {
+    font-size: 0.78rem;
+  }
+
+  .btn-cv {
+    font-size: 0.78rem;
+    padding: 0.4rem 0.85rem;
+  }
+}
+
+/* ---------- Alvo de toque confortável em qualquer tela sensível ao toque ---------- */
+@media (pointer: coarse) {
+  .navbar-pill a {
+    padding-block: 0.5rem;
   }
 }

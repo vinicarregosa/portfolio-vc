@@ -6,7 +6,7 @@ export function Hero(){
     return (
         <section id='home' className='hero-section'>
             <img
-                src='public/perfil.jpeg' alt='Foto de Vinícius Carregosa' className='hero-avatar'
+                src={`${import.meta.env.BASE_URL}perfil.jpeg`} alt='Foto de Vinícius Carregosa' className='hero-avatar'
             />
 
         <div className='hero-content'>

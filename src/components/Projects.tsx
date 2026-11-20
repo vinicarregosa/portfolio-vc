@@ -1,19 +1,37 @@
 import { ProjectCard, type ProjectProps } from './ProjectCard';
 import './Projects.css';
 
+const demoUrl = (slug: string) => `${import.meta.env.BASE_URL}projetos/${slug}/index.html`;
+
 const projects: ProjectProps[] = [
+  {
+    title: 'Jogo da Lâmpada',
+    description:
+      'Aplicação interativa em que o usuário controla o estado de uma lâmpada por meio de cliques, explorando eventos e manipulação do DOM.',
+    tags: ['HTML', 'CSS', 'JavaScript'],
+    liveUrl: demoUrl('jogo-da-lampada'),
+  },
+  {
+    title: 'Lista de Tarefas',
+    description:
+      'Aplicação web para criação, visualização e gerenciamento de tarefas, utilizando manipulação do DOM e eventos JavaScript.',
+    tags: ['HTML', 'CSS', 'JavaScript'],
+    liveUrl: demoUrl('lista_de_tarefas'),
+  },
+  {
+    title: 'Calculadora',
+    description:
+      'Calculadora web com operações aritméticas básicas e interface interativa, desenvolvida com JavaScript.',
+    tags: ['HTML', 'CSS', 'JavaScript'],
+    liveUrl: demoUrl('calculadora'),
+  },
   {
     title: 'Gestão de Catálogo E-Commerce',
     description:
       'Aplicação CRUD modular para cadastro, filtragem e controle de inventário de produtos com tipagem estática.',
     tags: ['TypeScript', 'HTML5', 'CSS3'],
     githubUrl: 'https://github.com/vinicarregosa/fashiontrends',
-  },
-  {
-    title: 'Assistente Pessoal Inteligente',
-    description:
-      'API de automação e organização pessoal com validação estrita de esquemas, persistência relacional e integração com modelos de linguagem.',
-    tags: ['Python', 'FastAPI', 'PostgreSQL', 'AI Agents'],
+    liveUrl: demoUrl('fashionTrends'),
   },
   {
     title: 'API Center — Gestão de Gateways',
@@ -23,36 +41,11 @@ const projects: ProjectProps[] = [
     githubUrl: 'https://github.com/vinicarregosa/dynamic-gateway-config',
   },
   {
-    title: 'FinTrack — Gestão Financeira',
-    description:
-      'Aplicação para gerenciamento financeiro pessoal, com funcionalidades de controle de receitas, despesas e acompanhamento da movimentação financeira.',
-    tags: ['Java', 'Spring Boot', 'PostgreSQL', 'REST API'],
-    githubUrl: 'https://github.com/vinicarregosa/fintrack',
-  },
-  {
     title: 'Member Manager — Gestão de Membros',
     description:
       'Aplicação web para gerenciamento e cadastro de membros com interface componentizada e integração com API REST.',
     tags: ['Angular', 'TypeScript', 'Angular Material', 'REST API', 'Microfrontends'],
     githubUrl: 'https://github.com/Residencias-Faculdade/crud-member-manager',
-  },
-  {
-    title: 'Jogo da Lâmpada',
-    description:
-      'Aplicação interativa em que o usuário controla o estado de uma lâmpada por meio de cliques, explorando eventos e manipulação do DOM.',
-    tags: ['HTML', 'CSS', 'JavaScript'],
-  },
-  {
-    title: 'Lista de Tarefas',
-    description:
-      'Aplicação web para criação, visualização e gerenciamento de tarefas, utilizando manipulação do DOM e eventos JavaScript.',
-    tags: ['HTML', 'CSS', 'JavaScript'],
-  },
-  {
-    title: 'Calculadora',
-    description:
-      'Calculadora web com operações aritméticas básicas e interface interativa, desenvolvida com JavaScript.',
-    tags: ['HTML', 'CSS', 'JavaScript'],
   },
 ];
 

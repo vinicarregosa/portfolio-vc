@@ -168,12 +168,89 @@
   text-align: center;
 }
 
-@media (max-width: 600px) {
+/* ---------- Dispositivos de toque: evita o zoom automático ao focar um campo ---------- */
+@media (hover: none) and (pointer: coarse) {
+  .form-group input,
+  .form-group textarea {
+    font-size: 16px;
+  }
+}
+
+/* ---------- Tablet em paisagem / notebook pequeno ---------- */
+@media (max-width: 1024px) {
+  .contact-section {
+    padding: 4.5rem 2rem 2.5rem;
+  }
+}
+
+/* ---------- Tablet em retrato / celular em paisagem ---------- */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 4rem 1.5rem 2rem;
+  }
+
+  .contact-container h2 {
+    font-size: 1.9rem;
+  }
+
+  .contact-description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
   .form-row {
     grid-template-columns: 1fr;
+    gap: 1.1rem;
   }
 
   .contact-form {
     padding: 1.5rem;
+  }
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 3.25rem 1.15rem 1.75rem;
+  }
+
+  .contact-container h2 {
+    font-size: 1.65rem;
+  }
+
+  .contact-description {
+    font-size: 0.95rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .contact-form {
+    padding: 1.15rem;
+    border-radius: 14px;
+    margin-bottom: 2rem;
+  }
+
+  /* 16px evita o zoom automático ao focar o campo no iOS */
+  .form-group input,
+  .form-group textarea {
+    font-size: 16px;
+    padding: 0.7rem 0.85rem;
+  }
+
+  .contact-submit-btn {
+    width: 100%;
+    padding: 0.85rem 1.25rem;
+  }
+
+  .form-error,
+  .form-feedback {
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    font-size: 0.85rem;
+  }
+
+  .footer-bottom {
+    padding-top: 1.5rem;
+    font-size: 0.8rem;
   }
 }
